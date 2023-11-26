@@ -1,3 +1,4 @@
+//Dado uma árvore retorne se ela está balanceada ou não.
 #include <iostream>
 using namespace std;
 
@@ -38,9 +39,11 @@ bool arvoreBalanceada(NoArvore *raiz){
 int main(){
     NoArvore *raiz = inserirNo(1);
     raiz->left = inserirNo(2);
-    // raiz->right = inserirNo(3);
+    raiz->right = inserirNo(3);
     raiz->left->left = inserirNo(4);
-    raiz->left->right = inserirNo(5);
+    raiz->left->left->left = inserirNo(5);
+    raiz->right->right = inserirNo(8);
+    raiz->right->right->right = inserirNo(9);
 
     if(arvoreBalanceada(raiz)){
         cout << "A arvore e balanceada." << endl;

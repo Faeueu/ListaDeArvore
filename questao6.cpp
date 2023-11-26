@@ -1,4 +1,4 @@
-//Dado uma árvore retorne a altura dela.
+//Dado uma árvore retorne à profundidade dela.
 #include <iostream>
 using namespace std;
 
@@ -15,12 +15,19 @@ NoArvore* inserirNo(int value) {
     newNo->right = NULL;
     return newNo;
 }
-
-int altura(NoArvore *raiz){
-    if(raiz == NULL){
+int profundidade(NoArvore *raiz) {
+    if (raiz == NULL) {
         return 0;
+    } else {
+        int profundidadeLeft = profundidade(raiz->left);
+        int profundidadeRight = profundidade(raiz->right);
+
+        if (profundidadeLeft > profundidadeRight) {
+            return profundidadeLeft + 1;
+        } else {
+            return profundidadeRight + 1;
+        }
     }
-    return 1+max(altura(raiz->left), altura(raiz->right));
 }
 
 int main(){
@@ -30,8 +37,7 @@ int main(){
     raiz->left->left = inserirNo(4);
     raiz->left->right = inserirNo(5);
 
-    cout << "Altura da arvore: " << altura(raiz);
+    cout << "Profundidade da arvore: " << profundidade(raiz);
 
     return 0;
 }
-

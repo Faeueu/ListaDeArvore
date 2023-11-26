@@ -1,3 +1,4 @@
+//Dado uma árvore retorne todos os caminhos da raiz até as folhas
 #include <iostream>
 using namespace std;
 

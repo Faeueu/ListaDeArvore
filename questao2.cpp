@@ -1,3 +1,4 @@
+//Escreva um Programa que receba duas árvores binarias e diga se elas são iguais.
 #include <iostream>
 using namespace std;
 
